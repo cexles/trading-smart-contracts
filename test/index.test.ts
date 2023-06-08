@@ -1,2 +1,3 @@
-// require("./<NAME_CONTRACT_FIRST>/index.test");
-// require("./<NAME_CONTRACT_SECOND>/index.test");
+require("./TradingPlatform/index.test");
+require("./UniSwap/index.test");
+require("./SwapHelperUniswapV3/index.test");

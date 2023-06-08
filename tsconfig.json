@@ -10,6 +10,7 @@
     "removeComments": false,
     "noEmit": false,
     "downlevelIteration": true,
+    "resolveJsonModule": true,
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,

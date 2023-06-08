@@ -1,1 +1,4 @@
-module.exports = { skipFiles: ["mocks"] };
+module.exports = {
+  skipFiles: ["mocks", "automationController"],
+  configureYulOptimizer: true,
+};

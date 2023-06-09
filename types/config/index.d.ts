@@ -16,6 +16,7 @@ declare module "config" {
   export interface Fork {
     readonly FORK_PROVIDER_URI: string;
     readonly FORK_ENABLED: boolean;
+    readonly BLOCK_NUMBER: number;
   }
 
   export const INFURA_KEY: string;
@@ -27,11 +28,28 @@ declare module "config" {
   export const NODE: Node;
   export const GAS_REPORTER: GasReporter;
   export const DEPLOY: Deploy;
-  export const SCRIPTS: Scripts;
 
-  export interface Deploy {}
-
-  export interface Scripts {
-    OPERATOR_KEY: string;
+  export interface Deploy {
+    TOKEN: {
+      readonly DECIMALS: number;
+      readonly SUPPLY: number | string;
+    };
+    TRADING_PLATFORM: {
+      ADMIN: string | null;
+      SWAP_HELPER: string | null;
+      PROTOCOL_FEE: number;
+      FEE_RECIPIENT: string | null;
+    };
+    SWAP_HELPER: {
+      SWAP_ROUTER: string;
+      FACTORY: string;
+      SLIPPAGE: number;
+      SECONDS_AGO_DEFAULT: number;
+    };
+    UPKEEP_CONTROLLER: {
+      LINK_TOKEN: string;
+      AUTOMATION_REGISTRAR: string;
+      AUTOMATION_REGISTRY: string;
+    };
   }
 }
